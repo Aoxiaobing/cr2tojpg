@@ -17,6 +17,8 @@ npm install
 
 npm run start
 
+
+
 select .cr2 file 
 
 waiting ....

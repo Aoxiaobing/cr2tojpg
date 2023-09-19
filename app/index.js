@@ -2,8 +2,8 @@
  * @Author: Zhaoheng && hellolad@126.com
  * @Date: 2023-09-18 10:39:42
  * @LastEditors: Zhaoheng && hellolad@126.com
- * @LastEditTime: 2023-09-19 14:46:06
- * @FilePath: /code-test/app/index.js
+ * @LastEditTime: 2023-09-19 15:15:04
+ * @FilePath: /cr2tojpg/app/index.js
  * @Description:
  *
  * Copyright (c) 2023 by Zhaoheng, All Rights Reserved.
@@ -80,5 +80,5 @@ app.post("/upload", function (req, res) {
 });
 
 app.listen(7001, () => {
-  console.log("web server runing at http://127.0.0.1:7001");
+  console.info("Open a browser and type in the following URL or click on it ->  http://127.0.0.1:7001/index.html");
 });

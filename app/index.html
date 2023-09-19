@@ -7,20 +7,25 @@
   </head>
   <body>
     <input type="file" id="inputfile" />
-
+    <div id="loading">Select File</div>
     <script>
       const inputEle = document.querySelector("#inputfile");
+      const loadingInput = document.querySelector("#loading");
       // const input = document.createElement("input")
       inputEle.onchange = function (ev) {
         console.log("ev", inputEle.files[0]);
         const formData = new FormData();
         formData.append("file", inputEle.files[0]);
+        loadingInput.textContent = "Waiting....";
         fetch("/upload", {
           method: "POST",
           body: formData,
         })
           .then((res) => res.json())
-          .then((res) => console.log(res));
+          .then((res) => console.log(res))
+          .finally(() => {
+            loadingInput.textContent = " Success! Check it out in the output folder！";
+          });
       };
     </script>
   </body>
