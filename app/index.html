@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="inputfile" />
+
+    <script>
+      const inputEle = document.querySelector("#inputfile");
+      // const input = document.createElement("input")
+      inputEle.onchange = function (ev) {
+        console.log("ev", inputEle.files[0]);
+        const formData = new FormData();
+        formData.append("file", inputEle.files[0]);
+        fetch("/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((res) => console.log(res));
+      };
+    </script>
+  </body>
+</html>
